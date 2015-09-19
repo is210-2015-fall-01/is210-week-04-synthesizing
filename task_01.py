@@ -4,7 +4,7 @@
 
 import decimal
 
-def fahrenheit_to_celsius(degrees):
+def fahrenheit_to_celsius(degrees=decimal.Decimal('53')):
     """ Returns conversion from f to c as a decimal.
 
     Args:
@@ -16,17 +16,14 @@ def fahrenheit_to_celsius(degrees):
     Examples:
          
     """
-
- 
-
+    
     a = decimal.Decimal('32')
     b = decimal.Decimal('5')
     c = decimal.Decimal('9')
-    return ((degrees - a) * b / c)
+    return (str(degrees - a) * b / c)
 
-DEGREE_VAL = decimal.Decimal('51')
 
-print fahrenheit_to_celsius(DEGREE_VAL)
+print fahrenheit_to_celsius()
 
 
 
