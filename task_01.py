@@ -1,6 +1,7 @@
 #!user/bin/env python
 # -*- coding: utf-8 -*-
-"""Module that converts fahrenheit to celsius"""
+"""Module that converts degrees in either fahrenheit or celsius into
+   either celsius or kelvin"""
 
 
 import decimal
@@ -51,6 +52,27 @@ def celsius_to_kelvin(degrees):
     return val_kelv
 
 
-print celsius_to_kelvin(100)
+def fahrenheit_to_kelvin(degrees):
+    """Does math to combine the above two functions in order to
+       convert fahrenheit to kelvin.
+
+    Args:
+        degrees (dec): degree en fahrenheit to be converted
+
+    Returns:
+        (dec) converted to kelvin
+
+    Examples:
+        fahrenheit_to_kelvin(53)
+        >>> '284.8166666666666666666666667'
+    """
+    dec = decimal.Decimal(degrees)
+    f_to_c = fahrenheit_to_celsius(dec)
+    c_to_k = celsius_to_kelvin(f_to_c)
+
+    return c_to_k
+
 
 print fahrenheit_to_celsius(53)
+print celsius_to_kelvin(100)
+print fahrenheit_to_kelvin(53)
