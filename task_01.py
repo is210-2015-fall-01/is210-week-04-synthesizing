@@ -1,29 +1,29 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""This module provides calculation temparature """
+"""This function calculate temprature."""
 
 
-import decimal
+from decimal import Decimal
 
-ABSOLUTE_DIFFERENCE = decimal.Decimal(273.15)
+ABSOLUTE_DIFFERENCE = Decimal('273.15')
 
 
 def fahrenheit_to_celsius(degrees):
     """ This function will convert fahrenheit to celsius."""
 
-    return (decimal.Decimal(degrees) -32) *5 /9
+    return (Decimal(degrees) -32)*5/9
 
 
 def celsius_to_kelvin(degrees):
-    """ This function convert celsius to kelvin"""
+    """ This function convert celsius to kelvin."""
 
-    return decimal.Decimal(degrees)+ ABSOLUTE_DIFFERENCE
+    return Decimal(degrees)+ ABSOLUTE_DIFFERENCE
 
 
 def fahrenheit_to_kelvin(degrees):
-    """This function convert fahrenheit to kelvin"""
+    """This function convert fahrenheit to kelvin."""
 
-    # return celsius_to_kelvin( fahrenheit_to_celsius() )
+    # celsius_to_kelvin(fahrenheit_to_celsius())
     celsius = fahrenheit_to_celsius(degrees)
     kelvin = celsius_to_kelvin(celsius)
 
