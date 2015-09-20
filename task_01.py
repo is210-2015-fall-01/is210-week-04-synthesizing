@@ -25,7 +25,6 @@ def fahrenheit_to_celsius(degrees):
 
     """
     degrees = decimal.Decimal(str(degrees))
-    #celsius = decimal.Decimal(str(round(((degrees - 32) * 5) / 9, 2)))
     celsius = ((degrees - 32) * 5) / 9
     return celsius
 
